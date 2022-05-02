@@ -3,8 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-html {
-  scroll-behavior: smooth;
+html,body{
+    scroll-behavior: smooth;
+    display: ;
 }
 
 /* nav bar */
@@ -20,11 +21,15 @@ html {
 }
 
 .nav-bar h1 {
-  color: white;
-  text-align: left;
-  padding-right: 200px;
-  font-family: "Monoton";
-  font-size: 3rem;
+    color: white;
+    text-align: left;
+    padding-right: 200px;
+    font-family: "Monoton";
+    font-size: 3rem;
+    background: linear-gradient(to right, #00ca87,
+    #498aeb, #e703e7, #f58484);
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;
 }
 .nav-bar ul {
   display: flex;
@@ -37,10 +42,11 @@ html {
   font-size: 1.7rem;
 }
 .nav-bar ul li a {
-  text-decoration: none;
-  color: white;
-  padding: 8px 25px;
-  transition: all 0.5s ease;
+    text-decoration: none;
+    color: white;
+    padding: 8px 25px;
+    transition: all .5s ease;
+
 }
 .nav-bar ul li a:hover {
   background-color: white;
@@ -58,17 +64,17 @@ html {
   color: white;
 }
 #home::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background: url("../assets/images/danny-howe-bn-D2bCvpik-unsplash.jpg")
-    no-repeat center center/cover;
-  height: 950px;
-  width: 100%;
-  z-index: -1;
-  opacity: 0.9;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: url("../assets/images/danny-howe-bn-D2bCvpik-unsplash.jpg") no-repeat center center/cover;
+    height: 950px;
+    width: 100%;
+     z-index: -1;
+    opacity: .9;
+    background-attachment: fixed;;
 }
 .main {
   display: flex;
@@ -81,12 +87,14 @@ html {
   margin-bottom: 100px;
 }
 .headings {
-  font-family: "Monoton";
-  font-size: 3rem;
-  text-align: center;
-  margin: 40px 0px;
-  text-shadow: 0 0 10px white;
-  color: #faf7ff;
+    font-family: "Monoton";
+    font-size: 4rem;
+    text-align: center;
+    margin: 40px 0px;
+    text-shadow: 0 0 10px white;
+    color: #faf7ff;
+    z-index: 1;
+
 }
 
 /* search bar */
@@ -309,8 +317,120 @@ animation: animate 3s linear infinite;
   margin-bottom: 20px;
   
 }
-/* Buttons */
-.et_pb_button {
-  display: inline-block;
-  margin: 5px; /* space between buttons */
+
+
+/* genre's */
+#pick-a-genre {
+    display: flex;
+    flex-direction: column;
+    height: 840px;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
+
+#pick-a-genre::before { 
+    content: "";
+    position: absolute; 
+    right: 0;
+    background: url("../assets/images/Records.jpg") no-repeat center center/cover;
+    height: 850px;
+    width: 100%;
+    opacity: .8;
+    background-attachment: fixed;
+}
+
+.genre {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    align-items: center;
+    top: 30%;
+    right: 10%;
+    padding: 15px;
+    margin-bottom: 100px;
+}
+
+.container-g {
+   padding-left: 120px;
+}
+
+#pick-a-genre h1 {
+    font-size: 4.5rem;
+    padding-bottom: 60px;
+    align-self: flex-start;
+    margin-left: 150px;
+    background: linear-gradient(to right, #000000,
+    #7201a7, #ffe609, #c7c400);
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text
+}
+
+
+/* Buttons */
+.buttons {
+    position: relative;
+    height: 60px;
+    width:200px;
+    margin:  20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background: #111;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: bg 0.5s;
+
+}
+.buttons:first-child:hover {
+    background: linear-gradient(90deg,#03a9f4, #f441a5, #ffeb3b,#03a9f4);
+    background-size: 400%;
+    box-shadow: 0 0 10px #77ccbe;
+    color: #111;
+}
+
+.buttons:last-child:hover {
+    background: linear-gradient(90deg,#fa7199, #f5ceb2, #e43b03,#fa7199);
+    background-size: 400%;
+    box-shadow: 0 0 10px #77ccbe;
+    color: #111;
+}
+.buttons:first-child:before,
+.buttons:last-child:before {
+    content: '';
+    position: absolute;
+    background: inherit;
+    top: -5px;
+    right: -5px;
+    border: -5px;
+    left: -5px;
+    border-radius: 50px;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity;
+}
+
+.buttons:first-child:hover:before,
+.buttons:last-child:hover:before {
+    opacity: 1;
+    z-index: -1;
+} 
+
+.buttons:hover {
+    z-index: 1;
+    animation:glow 8s linear infinite;
+}
+@keyframes glow {
+0% {
+    background-position: 0%;
+}
+100% {
+    background-position: 400%;
+}
+}
+
+
