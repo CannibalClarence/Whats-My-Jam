@@ -98,3 +98,26 @@ function autocomplete(inp, arr) {
   }
 
 autocomplete(document.getElementById("myInput"), genres);
+
+
+// function getButtonClass() {
+//   return document.getElementsByClassName("buttons");
+// }
+
+// var button = getButtonClass();
+
+
+const settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://50k-radio-stations.p.rapidapi.com/get/channels?country_id=1&page=1",
+	"method": "GET",
+	"headers": {
+		"X-RapidAPI-Host": "50k-radio-stations.p.rapidapi.com",
+		"X-RapidAPI-Key": "88f69c111cmshd2e7367ba95a640p13988ejsna248c526036b"
+	}
+};
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
