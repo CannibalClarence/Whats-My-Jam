@@ -172,15 +172,13 @@ html,body{
     color: whitesmoke;
     box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white; 
     width: 100%;
-    background: linear-gradient(45deg, #1d3046 0%, #21362b 0%, #213a42 52%, #26265c 100%);
-    background-size: contain;
-    background-position: center;
-    display: flex;
+    /* background: linear-gradient(45deg, #1d3046 0%, #21362b 0%, #213a42 52%, #26265c 100%); */
     justify-content: center;
-    flex-wrap: wrap;  
     font-weight: lighter;
-    background-color: antiquewhite; 
+    /* background-color: antiquewhite;  */
     border: 5px solid rgb(244, 231, 231);
+    background: url(./images/nardi.webp);
+    
 }
 
 #intro {
@@ -190,15 +188,15 @@ html,body{
     padding: 10px;
     color: rgba(0, 0, 0, 0.9 );
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.9 );
-    /* flex: 40%;    */
+    flex: 100%;   
     background-size: contain;
     background-position: center;
-    display: flex;
     justify-content: center;
     flex-wrap: wrap;  
     font-weight: lighter;
-    background-color: antiquewhite; 
     border: 5px solid rgb(244, 231, 231);
+
+    
 }
 #intro p {
     font-size: 18px;
@@ -207,21 +205,20 @@ html,body{
     color: rgb(245, 245, 245);
     margin-right: 500px;
     display: inline-flex;
-    width: 60%;
+    width: 50%;
     text-align: justify;
     margin-right: 25px;
     float: right;
+    background: url(./images/nardi.webp) ;
     
 }
 .first {
     border: solid 3px rgb(62, 16, 16);
     width: 20%;
     margin-right: 25px;
-    border-radius: 55px;
-    height: 300px;   
-    position: relative ;
-    top: 90px;
-   
+    /* border-radius: 55px; */
+    height: 300px;    
+    background: url(./images/nardi.webp);
 }
 /* #intro h2 {
     color: rgba(0, 0, 0, 0.9 );
@@ -231,37 +228,36 @@ html,body{
 } */
 .pro {
     font-weight: bold;
-    background-color: antiquewhite;
-    display: flex;
-    margin-top: 70px;
+    /* background-color: antiquewhite; */
+    display: flex ;
+    flex:  100%;
     flex-wrap: wrap;
     color: rgb(144, 113, 70); 
     padding: 30px 20%;
     align-items: flex-start;
     padding-right: 61px; 
+    background: url(./images/nardi.webp);
 }
 
 .second {
     display: flex;
     flex: 50%;
     height: 250px;
-    width:500px;
+    width:800px;
     background-size: contain;
-    margin-top: 10px;
     font-size: 40px;
     padding-right: 20px;
-    margin-top: 10px;
+   
 }
 .third {
     height: 250px;
     width: 500px;
     background-size: contain;
-    margin-top: 10px;
     padding-right: 20px;
-    margin-top: 10px;
     display: flex;
     flex: 50%;
 }
+
 /* genre's */
 #pick-a-genre {
     display: flex;
@@ -379,13 +375,11 @@ html,body{
 .headings {
   display: flex;
   flex-direction: column;
-  height: 100%;
   justify-content: flex-start;
-  position: relative;
-  margin: 20px 0 30px;
   border-bottom: 1px solid #27292a;
   font-size: small;
-  margin-left: 50px;
+  flex: content;
+  
 }
 
 
