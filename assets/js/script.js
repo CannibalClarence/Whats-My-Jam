@@ -100,17 +100,24 @@ function autocomplete(inp, arr) {
 autocomplete(document.getElementById("myInput"), genres);
 
 
-// function getButtonClass() {
-//   return document.getElementsByClassName("buttons");
-// }
+function getButtonClass() {
+  return document.getElementsByClassName("buttons");
+}
 
-// var button = getButtonClass();
+var button = getButtonClass();
+
+// var genre_id = $(this).attr('id');
+// console.log($(this).attr('id'));
+
+$(button).click(function(){
+  var genre_id = $(this).attr('id');
+  console.log($(this).attr('id'));
 
 
 const settings = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://50k-radio-stations.p.rapidapi.com/get/channels?country_id=1&page=1",
+	"url": "https://50k-radio-stations.p.rapidapi.com/get/channels?country_id=1&genre_id="+ genre_id +"&page=1",
 	"method": "GET",
 	"headers": {
 		"X-RapidAPI-Host": "50k-radio-stations.p.rapidapi.com",
@@ -120,4 +127,38 @@ const settings = {
 
 $.ajax(settings).done(function (response) {
 	console.log(response);
+  var parsed_data = JSON.parse(response);
+
+
+    //create table
+    for (i= 0; i < parsed_data.data.length; i++){
+        //create row
+
+        // put in juicy cells of data
+        //put in a nice link
+        parsed_data.data[i]
+        cell = "<a href="+ parsed_data.data[i].streams_url[0].url+">CLICK TO STREAM</a>"
+    }
+
+
+});
+
+
+// const settings2 = {
+// 	"async": true,
+// 	"crossDomain": true,
+// 	"url": "https://50k-radio-stations.p.rapidapi.com/get/channels?country_id=1&page=1",
+// 	"method": "GET",
+// 	"headers": {
+// 		"X-RapidAPI-Host": "50k-radio-stations.p.rapidapi.com",
+// 		"X-RapidAPI-Key": "88f69c111cmshd2e7367ba95a640p13988ejsna248c526036b"
+// 	}
+// };
+
+// $.ajax(settings).done(function (response) {
+// 	console.log(response);
+
+// });
+
+
 });
