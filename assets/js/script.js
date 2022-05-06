@@ -106,12 +106,20 @@ function getButtonClass() {
 
 var button = getButtonClass();
 
+
+// not working as expected!!
+var genre_id = button.id;
+console.log(genre_id);
+
+
 // var genre_id = $(this).attr('id');
 // console.log($(this).attr('id'));
 
-$(button).click(function(){
-  var genre_id = $(this).attr('id');
-  console.log($(this).attr('id'));
+// $(button).click(function(){
+//   var genre_id = $(this).attr('id');
+//   console.log($(this).attr('id'));
+
+// });
 
 
 const settings = {
@@ -125,6 +133,7 @@ const settings = {
 	}
 };
 
+
 $.ajax(settings).done(function (response) {
 	console.log(response);
   var parsed_data = JSON.parse(response);
@@ -132,14 +141,26 @@ $.ajax(settings).done(function (response) {
 
     //create table
     for (i= 0; i < parsed_data.data.length; i++){
-        //create row
+        //create table
+        let table = document.createElement('table');
+        table.innerHTML =  parsed_data.data[i];
 
-        // put in juicy cells of data
+        let row_1 = document.createElement('tr');
+        row_1.innerHTML = "<a href="+ parsed_data.data[i].streams_url[0].url+">CLICK TO STREAM</a>";
+
+
+        document.getElementById('main').appendChild(table);
+        table.appendChild(row_1);
+        // add rows of juicy cells of data
+        
+
+
         //put in a nice link
-        parsed_data.data[i]
-        cell = "<a href="+ parsed_data.data[i].streams_url[0].url+">CLICK TO STREAM</a>"
+        // parsed_data.data[i]
+        // cell = "<a href="+ parsed_data.data[i].streams_url[0].url+">CLICK TO STREAM</a>"
     }
 
+// function pass
 
 });
 
@@ -161,4 +182,3 @@ $.ajax(settings).done(function (response) {
 // });
 
 
-});
