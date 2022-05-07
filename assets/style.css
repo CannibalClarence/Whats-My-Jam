@@ -6,9 +6,6 @@
 }
 html{
     scroll-behavior: smooth;
-    display:flex ;
-    flex-wrap: wrap;
-    width: 100%;
 }
 
 /* nav bar */
@@ -57,7 +54,7 @@ html{
 #home {
     display: flex;
     flex-direction: column;
-    height: 900px;
+    height: 840px;
     justify-content: center;
     align-items: center;
     color: white;
@@ -68,8 +65,8 @@ html{
     top: 0;
     right: 0;
     bottom: 0;
-    background: url("./images/nardi.webp") no-repeat center center/cover;
-    height: 999px;
+    background: url("../assets/images/danny-howe-bn-D2bCvpik-unsplash.jpg") no-repeat center center/cover;
+    height: 950px;
     width: 100%;
      z-index: -1;
     opacity: .9;
@@ -86,7 +83,7 @@ html{
 }
 .headings {
     font-family: "Monoton";
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
     margin: 40px 0px;
     text-shadow: 0 0 10px white;
@@ -268,71 +265,35 @@ html{
 #about {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     box-sizing: border-box;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.9 );
-    color: whitesmoke;
+    color: black;
     box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white; 
-    width: 100%;
-    background: linear-gradient(45deg, #1d3046 0%, #21362b 0%, #213a42 52%, #26265c 100%);
-    justify-content:space-evenly;
-    font-weight: lighter;
-    /* background-color: antiquewhite;  */
-    border: 5px solid rgb(244, 231, 231);
-    background: url(./images/nardi.webp) no-repeat center center/cover;
-    
+    background: linear-gradient(45deg, #3d6491 0%, #7fb397 0%, #37464b 52%, #404088 90%);
 }
 
 #intro {
     display: flex;
     flex-direction: column;
     text-align: justify;
-    /* padding: 10px; */
+    padding: 10px;
     color: rgba(0, 0, 0, 0.9 );
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.9 );
-    width: 100%;   
-    background-size: contain;
-    background-position: center;
-    justify-content: center;
-    flex-wrap: wrap;  
-    font-weight: bold;
-    border: 5px solid rgb(244, 231, 231);
-    margin: 0 40px 0 40px;   
 }
 #intro p {
-    font-size: 28px;
+    align-items: center;
+    position: block;
+    font-size: 25px;
     font-weight: bold;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.9 );
-    color: rgb(245, 245, 245);
-    margin-right: 500px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: space-around;
-    margin: 0 40px 0 40px;
-    float: right;
-    /* background: url(./images/nardi.webp) ; */
+    color: black;
     
 }
-
-#about h1 {
-    font-weight: bold;
-    /* background-color: antiquewhite; */
-    display: flex ;
-    flex-wrap: wrap; 
-    /* padding: 30px 20%; */
-    align-items: flex-start;
-
-}
-
-
-.myslides{
-  position: absolute;
-  border: none;
-  border-bottom: none;
-  border-top: none;
-  z-index: 99;
+#intro h2 {
+    color: rgba(0, 0, 0, 0.9 );
+    font-size: 2rem;
+    margin-bottom: 20px; 
 }
 
 /* genre's */
@@ -349,7 +310,7 @@ html{
     content: "";
     position: absolute; 
     right: 0;
-    background: url("../assets/images/nardi.webp") no-repeat center center/cover;
+    background: url("../assets/images/Records.jpg") no-repeat center center/cover;
     height: 850px;
     width: 100%;
     opacity: .8;
@@ -383,6 +344,8 @@ html{
 z-index: 1;
 
 }
+
+
 /* Buttons */
 .buttons {
     position: relative;
@@ -448,28 +411,3 @@ z-index: 1;
     background-position: 400%;
 }
 }
-
-.headings {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  border-bottom: 1px solid #27292a;
-  font-size: large;
-  flex: content; 
-}
-
-/*start footer style*/
-footer {
-  width: 100%;
-  padding: 40px 35px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  list-style: none;
-}
-  
-footer h3 {
-  font-size: 20px;
-  margin: 0;
-}
-/*end footer style*/
