@@ -270,7 +270,8 @@ html{
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.9 );
     color: black;
     box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white; 
-    background: linear-gradient(45deg, #3d6491 0%, #7fb397 0%, #37464b 52%, #404088 90%);
+    /* background: linear-gradient(45deg, #3d6491 0%, #7fb397 0%, #37464b 52%, #404088 90%); */
+    
 }
 
 #intro {
@@ -280,20 +281,28 @@ html{
     padding: 10px;
     color: rgba(0, 0, 0, 0.9 );
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.9 );
+ /* background-image: url(../assets/images/danny-howe-bn-D2bCvpik-unsplash.jpg); */
 }
 #intro p {
     align-items: center;
     position: block;
     font-size: 25px;
-    font-weight: bold;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.9 );
-    color: black;
+    color: white;
+    line-height: 1.7;
+    color: white;
+    width: 80%;
+    font-size: 20px;
+    margin: 0 auto;
+    text-align: center;
     
 }
 #intro h2 {
     color: rgba(0, 0, 0, 0.9 );
     font-size: 2rem;
     margin-bottom: 20px; 
+    background-image: url(../assets/images/Records.jpg);
+  
 }
 
 /* genre's */
@@ -346,7 +355,7 @@ z-index: 1;
 }
 
 
-/* Buttons */
+/* /* Buttons */
 .buttons {
     position: relative;
     height: 60px;
@@ -411,3 +420,36 @@ z-index: 1;
     background-position: 400%;
 }
 }
+
+footer h2, footer div {
+  text-align: center;
+  width: 100%;
+}
+/*start footer style*/
+footer {
+  background: ;
+  width: 100%;
+  padding: 40px 35px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  color: black;
+}
+
+footer h2 {
+  font-size: 20px;
+  margin: 0;
+  color: black;
+}
+
+footer div{
+  line-height: 1.5;
+  text-align: right;
+}
+
+footer a {
+  color: black;
+}
+/*end footer style*/
