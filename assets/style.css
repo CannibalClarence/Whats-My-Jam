@@ -411,3 +411,70 @@ z-index: 1;
     background-position: 400%;
 }
 }
+
+/* radio station lists */
+.stations {
+position: relative;
+height: 60px;
+/* width:200px; */
+margin:  20px;
+border-radius: 50px;
+border: none;
+outline: none;
+background: #111;
+color: #fff;
+font-size: 20px;
+text-align: center;
+font-weight: 500;
+letter-spacing: 2px;
+text-transform: uppercase;
+cursor: pointer;
+transition: bg 0.5s;
+}
+
+.stations:hover {
+  background: linear-gradient(90deg,#03a9f4, #f5ceb2, #ffeb3b,#03a9f4);
+  background-size: 400%;
+  box-shadow: 0 0 10px #77ccbe;
+  color: #111;
+}
+
+.stations:last-child:hover {
+  background: linear-gradient(90deg,#fa7199, #f441a5, #e43b03,#fa7199);
+  background-size: 400%;
+  box-shadow: 0 0 10px #77ccbe;
+  color: #111;
+}
+.stations:before,
+.stations:last-child:before {
+  content: '';
+  position: absolute;
+  background: inherit;
+  top: -5px;
+  right: -5px;
+  border: -5px;
+  left: -5px;
+  border-radius: 50px;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity;
+}
+
+.stations:before,
+.stations:last-child:hover:before {
+  opacity: 1;
+  z-index: -1;
+} 
+
+.stations:hover {
+  z-index: 1;
+  animation:glow 8s linear infinite;
+}
+@keyframes glow {
+0% {
+  background-position: 0%;
+}
+100% {
+  background-position: 400%;
+}
+}

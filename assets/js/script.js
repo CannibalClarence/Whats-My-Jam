@@ -112,18 +112,7 @@ var button = getButtonClass();
 
 $(button).click(function() {
   var genre_id = $(this).attr("id");
-  // const settings = {
-  //   "async": true,
-  //   "crossDomain": true,
-  //   "url": "https://50k-radio-stations.p.rapidapi.com/get/channels?country_id=1&genre_id="+ genre_id +"&page=1",
-  //   "method": "GET",
-  //   "contentType": "text/plain",
-  //   "headers": {
-  //     "X-RapidAPI-Host": "50k-radio-stations.p.rapidapi.com",
-  //     "X-RapidAPI-Key": "88f69c111cmshd2e7367ba95a640p13988ejsna248c526036b"
-  //   }
-  // };
-  
+
   const options = {
     method: 'GET',
     headers: {
@@ -137,26 +126,30 @@ $(button).click(function() {
   .then(response => response.json())
 	.then(function(response) {
 
+    // clear table content
     radioTable.innerHTML = '';
 
     let table = document.createElement('table');
     table.setAttribute("id", "table");
 
+    // generate and populate table rows with data from api
     for (i= 0; i < 10; i++){
 
       let row_1 = document.createElement('tr');
-      row_1.setAttribute("class", "text-center text-dark list-group-item mt-2 mb-2");
+      row_1.setAttribute("class", "stations col-12 text-white list-group-item mt-2 mb-2");
+
+      var stationName = response.data[i].name;
+      console.log(stationName);
+
+      var streamLink = "https://www.fmradiofree.com/search?q=" + stationName;
                        
-              row_1.innerHTML = "<td>" + response.data[i].name + "</td><td><a href="+ response.data[i].https_url+">CLICK TO STREAM</a></td>";
-      
+              row_1.innerHTML = "<td>" + stationName + "</td><td><a href="+ streamLink+">CLICK TO FIND A STATION</a></td>";
+              // get links to open in new tab 
+              // row_1.getElementsByClassName("stations").target="_blank";
+
               table.appendChild(row_1);
 
-      // var listItem = document.createElement('li');
-      // set text of list element
-      // listItem.textContent = "response.data[i].name " + "response.data[i].streams_url[0]";
-      // listItem.setAttribute("class", "text-center text-dark list-group-item mt-2 mb-2");
-      // radioList.appendChild(listItem);
-
+      // append table to document div
       radioTable.appendChild(table);
 
     }
