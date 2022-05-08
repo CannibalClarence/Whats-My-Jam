@@ -1,4 +1,7 @@
 var genres = ["Rock", "Reggae", "Lo-Fi", "Hip Hop", "R&amp;B Soul", "Metal", "Christian", "Rap", "Country", "EDM", "Jazz", "Pop"];
+var radioList = document.querySelector('radioUl');
+var radioTable = document.querySelector('radioDiv');
+
 
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
@@ -98,3 +101,122 @@ function autocomplete(inp, arr) {
   }
 
 autocomplete(document.getElementById("myInput"), genres);
+
+
+function getButtonClass() {
+  return document.getElementsByClassName("buttons");
+}
+
+var button = getButtonClass();
+
+
+$(button).click(function() {
+  var genre_id = $(this).attr("id");
+
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Host': '50k-radio-stations.p.rapidapi.com',
+      'X-RapidAPI-Key': '88f69c111cmshd2e7367ba95a640p13988ejsna248c526036b'
+    }
+  };
+  
+  fetch('https://50k-radio-stations.p.rapidapi.com/get/channels?country_id=1&genre_id='+ genre_id +'&page=1', options)
+  
+  .then(response => response.json())
+	.then(function(response) {
+
+    // clear table content
+    radioTable.innerHTML = '';
+
+    let table = document.createElement('table');
+    table.setAttribute("id", "table");
+
+    // generate and populate table rows with data from api
+    for (i= 0; i < 10; i++){
+
+      let row_1 = document.createElement('tr');
+      row_1.setAttribute("class", "stations col-12 text-white list-group-item mt-2 mb-2");
+
+      var stationName = response.data[i].name;
+      console.log(stationName);
+
+      var streamLink = "https://www.fmradiofree.com/search?q=" + stationName;
+                       
+              row_1.innerHTML = "<td>" + stationName + "</td><td><a href="+ streamLink+">CLICK TO FIND A STATION</a></td>";
+              // get links to open in new tab 
+              // row_1.getElementsByClassName("stations").target="_blank";
+
+              table.appendChild(row_1);
+
+      // append table to document div
+      radioTable.appendChild(table);
+
+    }
+    })
+	.catch(err => console.error(err));
+
+});
+
+  // $.ajax(settings).done(function (response) {
+  //   // console.log(response);
+  //   var parsed_data = JSON.parse(response);
+  
+  // let table = document.createElement('table');
+  //     //create table
+  //     for (i= 0; i < parsed_data.data.length; i++){
+  //         //create table
+          
+  //         let row_1 = document.createElement('tr');
+                       
+  //         row_1.innerHTML = "<td>" + parsed_data.data[i] + "</td><td><a href="+ parsed_data.data[i].streams_url[0].url+">CLICK TO STREAM</a></td>";
+  
+  //         table.appendChild(row_1);
+        
+  //         // add rows of juicy cells of data
+          
+  //         //put in a nice link
+  //         // parsed_data.data[i]
+  //         // cell = "<a href="+ parsed_data.data[i].streams_url[0].url+">CLICK TO STREAM</a>"
+  //     }
+  // document.getElementById('radioDiv').appendChild(table);
+  // // function pass
+  
+  // });
+// })
+
+
+// not working as expected!!
+
+
+
+// var genre_id = $(this).attr('id');
+// console.log($(this).attr('id'));
+
+// $(button).click(function(){
+//   var genre_id = $(this).attr('id');
+//   console.log($(this).attr('id'));
+
+// });
+
+
+
+
+
+// const settings2 = {
+// 	"async": true,
+// 	"crossDomain": true,
+// 	"url": "https://50k-radio-stations.p.rapidapi.com/get/channels?country_id=1&page=1",
+// 	"method": "GET",
+// 	"headers": {
+// 		"X-RapidAPI-Host": "50k-radio-stations.p.rapidapi.com",
+// 		"X-RapidAPI-Key": "88f69c111cmshd2e7367ba95a640p13988ejsna248c526036b"
+// 	}
+// };
+
+// $.ajax(settings).done(function (response) {
+// 	console.log(response);
+
+// });
+
+
