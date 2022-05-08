@@ -1,4 +1,7 @@
 var genres = ["Rock", "Reggae", "Lo-Fi", "Hip Hop", "R&amp;B Soul", "Metal", "Christian", "Rap", "Country", "EDM", "Jazz", "Pop"];
+var radioList = document.querySelector('radioUl');
+var radioTable = document.querySelector('radioDiv');
+
 
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
@@ -109,46 +112,85 @@ var button = getButtonClass();
 
 $(button).click(function() {
   var genre_id = $(this).attr("id");
-  const settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://50k-radio-stations.p.rapidapi.com/get/channels?country_id=1&genre_id="+ genre_id +"&page=1",
-    "method": "GET",
-    "contentType": "text/plain",
-    "data": "JSON.stringify(response)",
-    "headers": {
-      "X-RapidAPI-Host": "50k-radio-stations.p.rapidapi.com",
-      "X-RapidAPI-Key": "88f69c111cmshd2e7367ba95a640p13988ejsna248c526036b"
+  // const settings = {
+  //   "async": true,
+  //   "crossDomain": true,
+  //   "url": "https://50k-radio-stations.p.rapidapi.com/get/channels?country_id=1&genre_id="+ genre_id +"&page=1",
+  //   "method": "GET",
+  //   "contentType": "text/plain",
+  //   "headers": {
+  //     "X-RapidAPI-Host": "50k-radio-stations.p.rapidapi.com",
+  //     "X-RapidAPI-Key": "88f69c111cmshd2e7367ba95a640p13988ejsna248c526036b"
+  //   }
+  // };
+  
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Host': '50k-radio-stations.p.rapidapi.com',
+      'X-RapidAPI-Key': '88f69c111cmshd2e7367ba95a640p13988ejsna248c526036b'
     }
   };
   
+  fetch('https://50k-radio-stations.p.rapidapi.com/get/channels?country_id=1&genre_id='+ genre_id +'&page=1', options)
   
-  $.ajax(settings).done(function (response) {
-    // console.log(response);
-    var parsed_data = JSON.parse(response);
-  
-  let table = document.createElement('table');
-      //create table
-      for (i= 0; i < parsed_data.data.length; i++){
-          //create table
-          
-          let row_1 = document.createElement('tr');
+  .then(response => response.json())
+	.then(function(response) {
+
+    radioTable.innerHTML = '';
+
+    let table = document.createElement('table');
+    table.setAttribute("id", "table");
+
+    for (i= 0; i < 10; i++){
+
+      let row_1 = document.createElement('tr');
+      row_1.setAttribute("class", "text-center text-dark list-group-item mt-2 mb-2");
                        
-          row_1.innerHTML = "<td>" + parsed_data.data[i] + "</td><td><a href="+ parsed_data.data[i].streams_url[0].url+">CLICK TO STREAM</a></td>";
+              row_1.innerHTML = "<td>" + response.data[i].name + "</td><td><a href="+ response.data[i].https_url+">CLICK TO STREAM</a></td>";
+      
+              table.appendChild(row_1);
+
+      // var listItem = document.createElement('li');
+      // set text of list element
+      // listItem.textContent = "response.data[i].name " + "response.data[i].streams_url[0]";
+      // listItem.setAttribute("class", "text-center text-dark list-group-item mt-2 mb-2");
+      // radioList.appendChild(listItem);
+
+      radioTable.appendChild(table);
+
+    }
+    })
+	.catch(err => console.error(err));
+
+});
+
+  // $.ajax(settings).done(function (response) {
+  //   // console.log(response);
+  //   var parsed_data = JSON.parse(response);
   
-          table.appendChild(row_1);
-        
-          // add rows of juicy cells of data
+  // let table = document.createElement('table');
+  //     //create table
+  //     for (i= 0; i < parsed_data.data.length; i++){
+  //         //create table
           
-          //put in a nice link
-          // parsed_data.data[i]
-          // cell = "<a href="+ parsed_data.data[i].streams_url[0].url+">CLICK TO STREAM</a>"
-      }
-  document.getElementById('radioDiv').appendChild(table);
-  // function pass
+  //         let row_1 = document.createElement('tr');
+                       
+  //         row_1.innerHTML = "<td>" + parsed_data.data[i] + "</td><td><a href="+ parsed_data.data[i].streams_url[0].url+">CLICK TO STREAM</a></td>";
   
-  });
-})
+  //         table.appendChild(row_1);
+        
+  //         // add rows of juicy cells of data
+          
+  //         //put in a nice link
+  //         // parsed_data.data[i]
+  //         // cell = "<a href="+ parsed_data.data[i].streams_url[0].url+">CLICK TO STREAM</a>"
+  //     }
+  // document.getElementById('radioDiv').appendChild(table);
+  // // function pass
+  
+  // });
+// })
 
 
 // not working as expected!!
