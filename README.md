@@ -1,6 +1,7 @@
 ## Whats My Jam
 
 ## Purpose
+Build and awesome app!
     Whats My Jam! allows local and global music experience to most popular libraries 
     of songs that fans would like to stream, enjoy and also look up coming concerts. The 
     only thing you need is just a click of a button and then you my friend will be 
