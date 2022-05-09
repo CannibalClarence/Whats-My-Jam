@@ -14,7 +14,11 @@ When a letter was pressed the function would generate additional rows to house t
 
 ![adding and removing rows code](./assets/images/autocompleteaddorremoverows.png)
 
-As a cool feature we had the created rows be responsive to the user's arrow keys. As the keys for up and down were pressed the selection would be highlighted with blue to alert the user of what they were highlighting. From there they could mouse click or hit 'enter' to add the completed option into the search bar. If the user just used their mouse from the beginning, however, there will be no blue highlighting.
+As a cool feature we had the created rows be responsive to the user's arrow keys. As the keys for up and down were pressed the selection would be highlighted with blue to alert the user of what they were highlighting. We were able to restyle this feature to have the colors cycle through and not stay static. 
+
+![search bar colors](./assets/images/searchbarcolors.png)
+
+From there they could mouse click or hit 'enter' to add the completed option into the search bar. If the user just used their mouse from the beginning, however, there will be no blue highlighting.
 
 ![arrow keys to scroll the autocomplete options](./assets/images/autocompletearrowkeys.png)
 
