@@ -1,6 +1,7 @@
 var genres = ["Rock", "Reggae", "Lo-Fi", "Hip Hop", "R&amp;B Soul", "Metal", "Christian", "Rap", "Country", "EDM", "Jazz", "Pop"];
 var radioList = document.querySelector('radioUl');
 var radioTable = document.querySelector('radioDiv');
+var artistTable = document.querySelector('artistDiv')
 
 
 function autocomplete(inp, arr) {
@@ -102,7 +103,7 @@ function autocomplete(inp, arr) {
 
 autocomplete(document.getElementById("myInput"), genres);
 
-
+// Hiens api
 function getButtonClass() {
   return document.getElementsByClassName("buttons");
 }
@@ -127,7 +128,7 @@ $(button).click(function() {
 	.then(function(response) {
 
     // clear table content
-    radioTable.innerHTML = '';
+    radioTable.innerHTML = "";
 
     let table = document.createElement('table');
     table.setAttribute("id", "table");
@@ -143,7 +144,7 @@ $(button).click(function() {
 
       var streamLink = "https://www.fmradiofree.com/search?q=" + stationName;
                        
-              row_1.innerHTML = "<td>" + stationName + "</td><td><a href="+ streamLink+">CLICK TO FIND A STATION</a></td>";
+              row_1.innerHTML = "<td>" + stationName + "</td><td><a href="+ streamLink + "> CLICK TO FIND A STATION</a></td>";
               // get links to open in new tab 
               // row_1.getElementsByClassName("stations").target="_blank";
 
@@ -220,3 +221,125 @@ $(button).click(function() {
 // });
 
 
+
+
+
+// // User input music api
+// function getButtonClass() {
+//   return document.getElementById("searchBtn");
+// }
+
+// var button = getButtonClass();
+
+// function getInputClass() {
+//   return document.getElementById("myInput")
+// }
+
+// var myInput = getInputClass();
+
+// $(button).click(function() {
+//   var myInput = $('myInput').val();
+//   event.preventDefault();
+//   localStorage.setItem("myInput", JSON.stringify(playlist_name));
+//   const options = {
+//     method: 'GET',
+//     headers: {
+//       'X-RapidAPI-Host': 'spotify23.p.rapidapi.com',
+//       'X-RapidAPI-Key': 'eebb2c5c60msh33ac5ceb4e95ca7p1dacdfjsnfa63b046ad4e'
+//     }
+//   };
+  
+//   fetch('https://spotify23.p.rapidapi.com/search/?q=search&type=multi&offset=0&limit=10&numberOfTopResults=5', options)
+//     .then(response => response.json())
+//     .then(response => console.log(response))
+
+// 	.then(function(response) {
+
+
+// // clear table content
+// artistTable.innerHTML = ""
+
+// let table = document.createElement('table');
+//     table.setAttribute("id", "table");
+
+//     // generate and populate table rows with data from api
+//     for (i= 0; i < 10; i++){
+
+//       let row_1 = document.createElement('tr');
+//       row_1.setAttribute("class", "stations col-12 text-white list-group-item mt-2 mb-2");
+
+//       var playlistName = response.data[i].name;
+//       console.log(playlistName);
+
+//       var streamLink = "https://www.fmradiofree.com/search?q=" + stationName;
+                       
+//               row_1.innerHTML = "<td>" + stationName + "</td><td><a href="+ streamLink+">CLICK TO FIND A STATION</a></td>";
+//               // get links to open in new tab 
+//               // row_1.getElementsByClassName("stations").target="_blank";
+
+//               table.appendChild(row_1);
+
+//       // append table to document div
+//       radioTable.appendChild(table);
+
+//     }
+//     })
+// 	.catch(err => console.error(err));
+
+// });
+
+
+
+
+
+// User input music api
+// function getButtonClass() {
+//   return document.getElementById("searchBtn");
+// }
+
+// var button = getButtonClass();
+
+// function getInputClass() {
+//   return document.getElementById("myInput")
+// }
+
+// var myInput = getInputClass();
+
+// $(button).click(function() {
+//   var myInput = $('myInput').val();
+//   event.preventDefault();
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Host': 'spotify23.p.rapidapi.com',
+// 		'X-RapidAPI-Key': 'eebb2c5c60msh33ac5ceb4e95ca7p1dacdfjsnfa63b046ad4e'
+// 	}
+// };
+
+// fetch('https://spotify23.p.rapidapi.com/search/?q=search'+ myInput + '&type=multi&offset=0&limit=10&numberOfTopResults=5', options)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+//   .then(function(response) {
+    
+    
+//     // clear table content
+//     artistTable.innerHTML = ""
+    
+//         // generate and populate table rows with data from api
+//         for(i=1; i<data.length; i++) {
+//           var resultData = 
+//           '<img src="'+ data[i].playlist.url + '"><br>' +
+//           '<strong>Artist Name:</strong> ' + data[i].artist.name + '<br/>' +
+//           '<strong>Venue Name:</strong> ' + data[i].venue.name + '<br/>' +
+//               '<strong>Venue Location:</strong> ' + data[i].venue.location + '<br>' +
+//               '<a class="text-decoration-none" href="' + data[i].artist.url + '" target="_blank" ><strong>Concert Details</strong></a>';
+//           $(artistTable).append('<hr>');
+//           $(artistTable).append(resultData);
+    
+//           // append table to document div
+//           radioTable.appendChild(table);
+    
+//         }
+//         })
+//     .catch(err => console.error(err));
+// });
