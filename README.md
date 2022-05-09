@@ -2,7 +2,7 @@
 
 ## Purpose
 to build and awesome app!
-     Whats My Jam! allows local and global music experience to most popular libraries 
+     Whats My Jam! allows local and global music experience to most popular 
                         radio stations that fans would like to stream. The 
                         only thing you need is just a click of a button and then you my friend will be 
                         enjoying all your favorites in one place.
