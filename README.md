@@ -66,8 +66,9 @@ https://rapidapi.com/vitlabs27/api/radio-world-50-000-radios-stations
      
 # NOTES
 radio world api is out of calls so may not work. did not know i had a cap until the last minute.
-did not get a chance to completely utilize local storage due to spending most of the time trying to get these api's to work
+did not get a chance to completely utilize local storage due to spending most of the time trying to get these api's to work.
 eventually this website will work way better than now once we get a better grasp on using and styling api's
+
 
 ## Contribution
 made with love by Hien, Nardi and Theo.
