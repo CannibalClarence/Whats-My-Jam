@@ -1,6 +1,7 @@
 var genres = ["Rock", "Reggae", "Lo-Fi", "Hip Hop", "R&amp;B Soul", "Metal", "Christian", "Rap", "Country", "EDM", "Jazz", "Pop"];
 var radioList = document.querySelector('radioUl');
 var radioTable = document.querySelector('radioDiv');
+var artistTable = document.getElementById('alsoRadio')
 
 
 function autocomplete(inp, arr) {
@@ -102,7 +103,7 @@ function autocomplete(inp, arr) {
 
 autocomplete(document.getElementById("myInput"), genres);
 
-
+// Hiens api
 function getButtonClass() {
   return document.getElementsByClassName("buttons");
 }
@@ -127,7 +128,7 @@ $(button).click(function() {
 	.then(function(response) {
 
     // clear table content
-    radioTable.innerHTML = '';
+    radioTable.innerHTML = "";
 
     let table = document.createElement('table');
     table.setAttribute("id", "table");
@@ -143,7 +144,7 @@ $(button).click(function() {
 
       var streamLink = "https://www.fmradiofree.com/search?q=" + stationName;
                        
-              row_1.innerHTML = "<td>" + stationName + "</td><td><a href="+ streamLink+">CLICK TO FIND A STATION</a></td>";
+              row_1.innerHTML = "<td>" + stationName + "</td><td><a href="+ streamLink + "> CLICK TO FIND A STATION</a></td>";
               // get links to open in new tab 
               // row_1.getElementsByClassName("stations").target="_blank";
 
@@ -151,6 +152,8 @@ $(button).click(function() {
 
       // append table to document div
       radioTable.appendChild(table);
+
+      localStorage.setItem("genre_id", JSON.stringify(stationName));
 
     }
     })

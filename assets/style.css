@@ -273,6 +273,7 @@ html{
     background: linear-gradient(45deg, #3d6491 0%, #7fb397 0%, #37464b 52%, #404088 90%);
 }
 
+
 #intro {
     display: flex;
     flex-direction: column;
@@ -284,9 +285,9 @@ html{
 #intro p {
     align-items: center;
     position: block;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bold;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9 );
+    text-shadow: 0 0 10px white;
     color: black;
     
 }
@@ -304,6 +305,8 @@ html{
     justify-content: center;
     align-items: center;
     color: white;
+    box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
+    z-index: 1;
 }
 
 #pick-a-genre::before { 
@@ -478,3 +481,34 @@ transition: bg 0.5s;
   background-position: 400%;
 }
 }
+/* Radio stations */
+
+.radio-stations::before { 
+  content: "";
+  position: absolute; 
+  right: 0;
+  background: url("../assets/images/on-air.jpg") no-repeat center center/cover;
+  height: 82.5%;
+  width: 100%;
+  opacity: .9;
+  background-attachment:fixed;
+  z-index: -1;
+}
+
+
+.radio-stations h1 {
+  float: right;
+  padding-right: 50px;
+  text-shadow: 0 0 20px #f76161;
+  color: #eeecec;
+  font-size: 5rem;
+}
+.radio-stations {
+  display: flex;
+  flex-direction: column;
+  height: 840px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+

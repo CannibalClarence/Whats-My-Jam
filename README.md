@@ -1,4 +1,3 @@
-# Whats-My-Jam
 
 ## Autocomplete Feature
 To help the user with their selections we utilized a search bar with an autocomplete function. This way we could also control the user's inputs to ensure that our website and the search functions worked properly. 
