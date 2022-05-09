@@ -1,4 +1,11 @@
+## Whats My Jam
 
+## Purpose
+    Whats My Jam! allows local and global music experience to most popular libraries 
+    of songs that fans would like to stream, enjoy and also look up coming concerts. The 
+    only thing you need is just a click of a button and then you my friend will be 
+    enjoying all your favorites in one place.
+    
 ## Autocomplete Feature
 To help the user with their selections we utilized a search bar with an autocomplete function. This way we could also control the user's inputs to ensure that our website and the search functions worked properly. 
 
