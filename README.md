@@ -52,8 +52,13 @@ We created a table as well as rows and cells to house our data. We used a for lo
 
 
 ##api's
+<ul>
+     <li>
 https://rapidapi.com/vitlabs27/api/radio-world-50-000-radios-stations
+     </li>
+     <li>
 https://rapidapi.com/vitlabs27/api/radio-world-50-000-radios-stations
+     </li>
 
 ## Contribution
 made with love by Hien, Nardi and Theo.
