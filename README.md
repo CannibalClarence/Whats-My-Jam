@@ -2,10 +2,10 @@
 
 ## Purpose
 to build and awesome app!
-    Whats My Jam! allows local and global music experience to most popular libraries 
-    of songs that fans would like to stream, enjoy and also look up coming concerts. The 
-    only thing you need is just a click of a button and then you my friend will be 
-    enjoying all your favorites in one place.
+     Whats My Jam! allows local and global music experience to most popular libraries 
+                        radio stations that fans would like to stream. The 
+                        only thing you need is just a click of a button and then you my friend will be 
+                        enjoying all your favorites in one place.
     
  ## Overview
  search input links to radio api based on genre, buttons link to radio api that links to genre providing user with radio stations 
@@ -52,3 +52,8 @@ We created a table as well as rows and cells to house our data. We used a for lo
 
 
 ##api's
+https://rapidapi.com/vitlabs27/api/radio-world-50-000-radios-stations
+https://rapidapi.com/vitlabs27/api/radio-world-50-000-radios-stations
+
+## Contribution
+made with love by Hien, Nardi and Theo.
