@@ -161,8 +161,6 @@ $(button).click(function() {
 
 });
 
-
-
 function getButtonClass() {
   return document.getElementsByClassName("buttons");
 }
