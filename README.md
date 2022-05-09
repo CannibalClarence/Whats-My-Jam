@@ -8,7 +8,7 @@ to build and awesome app!
                         enjoying all your favorites in one place.
     
  ## Overview
- search input links to radio api based on genre, buttons link to radio api that links to genre providing user with radio stations 
+  buttons link to 50k radio api that appends radio station links to page, search input links to radio world api that appends radio station links to page.
  
  ## Tech Used
  HTML, CSS, JavaScipt
