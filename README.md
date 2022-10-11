@@ -69,6 +69,8 @@ radio world api is out of calls so may not work. did not know i had a cap until 
 did not get a chance to completely utilize local storage due to spending most of the time trying to get these api's to work.
 eventually this website will work way better than now once we get a better grasp on using and styling api's
 
+## Application Link
+Check out our website here: https://cannibalclarence.github.io/Whats-My-Jam/
 
 ## Contribution
 made with love by Hien, Nardi and Theo.
